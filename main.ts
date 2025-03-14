@@ -119,8 +119,8 @@ function RedTurn () {
                 })
             }
         } else if (Snorlax) {
-            if (!(RedSLP)) {
-                if (Math.percentChance(25)) {
+            if (Math.percentChance(25)) {
+                if (!(RedSLP)) {
                     game.showLongText("Enemy Snorlax used Body Slam!", DialogLayout.Bottom)
                     for (let index = 0; index < randint(80, 100); index++) {
                         pause(1)
@@ -129,32 +129,35 @@ function RedTurn () {
                     timer.after(500, function () {
                         GoldTurn()
                     })
-                } else if (Math.percentChance(25)) {
+                }
+            } else if (Math.percentChance(25)) {
+                if (!(RedSLP)) {
                     game.showLongText("Enemy Snorlax used Rest!", DialogLayout.Bottom)
                     for (let index = 0; index < randint(80, 100); index++) {
                         pause(1)
                         RedHP.value += 1
                     }
                     RedSLP = true
+                    Toxiced = true
                     statusbar.value += 0
                     timer.after(500, function () {
                         GoldTurn()
                     })
-                } else if (Math.percentChance(25)) {
-                    game.showLongText("Beta Text", DialogLayout.Bottom)
-                    for (let index = 0; index < randint(50, 70); index++) {
-                        pause(1)
-                        statusbar.value += -1
-                    }
-                    timer.after(500, function () {
-                        GoldTurn()
-                    })
-                } else if (Math.percentChance(25)) {
-                    game.showLongText("Beta Text", DialogLayout.Bottom)
-                    for (let index = 0; index < randint(80, 100); index++) {
-                        pause(1)
-                        statusbar.value += -1
-                    }
+                }
+            } else if (Math.percentChance(25)) {
+                game.showLongText("Enemy Snorlax used Snore!", DialogLayout.Bottom)
+                for (let index = 0; index < randint(50, 70); index++) {
+                    pause(1)
+                    statusbar.value += -1
+                }
+                timer.after(500, function () {
+                    GoldTurn()
+                })
+            } else if (Math.percentChance(25)) {
+                game.showLongText("Beta Text", DialogLayout.Bottom)
+                for (let index = 0; index < randint(80, 100); index++) {
+                    pause(1)
+                    statusbar.value += -1
                 }
             }
         } else if (Venusaur) {
